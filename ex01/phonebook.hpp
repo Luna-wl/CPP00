@@ -4,25 +4,15 @@
 # include <iostream>
 # include <iomanip>
 # include <string>
-#	include "colour.hpp"
-
-class Contact
-{
-	public:
-		std::string firstname;
-		std::string lastname;
-		std::string nickname;
-		std::string phonenumber;
-		std::string darkestSecret;
-		Contact();
-};
+# include "colour.hpp"
 
 class PhoneBook
 {
 	private:
 		
 	public:
-
+		void add_contact();
+		void print_contact();
 };
 
 #endif
