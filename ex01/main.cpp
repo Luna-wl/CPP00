@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 21:24:37 by wluedara          #+#    #+#             */
-/*   Updated: 2023/05/12 22:32:03 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/05/15 16:52:24 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,28 @@
 
 int	main() {
 	PhoneBook phonebook;
-	// Contact contact;
-	
-	// contact.set_firstname("fah");
-
-	// std::cout << contact.get_firstname() << std::endl;
 
 	std::string input;
+	std::cout  << "\n ----------------------" << std::endl;
+	std::cout << WHT << "|" << YEL << " WELCOME TO PHONEBOOK " << reset << "|" << std::endl;
+	std::cout  << " ----------------------\n" << reset << std::endl;
 	while (1)
 	{
-		std::cout << "\nEnter a command: " << std::endl;
-		std::cout << "1. ADD" << std::endl;
-		std::cout << "2. SEARCH" << std::endl;
-		std::cout << "3. EXIT" << std::endl;
+		std::cout << GRN << "\nWhat do u want form me?: " << std::endl;
+		std::cout << RED << "1. ADD:    > to add info to contact" << std::endl;
+		std::cout << RED << "2. SEARCH: > to search for a contact" << std::endl;
+		std::cout << RED << "3. EXIT:   > close the phonebook\n" << reset << std::endl;
 
-		std::getline(std::cin, input);
-		// if (input == "ADD" || input == "add" || input == "1")
-			// phonebook.addcontact();
+		if (!std::getline(std::cin, input))
+			return (0);
+		if (input == "ADD" || input == "add" || input == "1")
+			phonebook.addContactInfo();
+		else if (input == "SEARCH" || input == "search" || input == "2")
+			phonebook.search();
+		else if (input == "EXIT" || input == "exit" || input == "3")
+			break;
+		else
+			std::cout << BRED << "\nCommand not found" << reset << std::endl;
 	}
 	
 }

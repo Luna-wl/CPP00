@@ -1,18 +1,21 @@
 #ifndef PHONE_BOOK_H
 # define PHONE_BOOK_H
 
-# include <iostream>
-# include <iomanip>
-# include <string>
-# include "colour.hpp"
+# include "contact.hpp"
 
-class PhoneBook
-{
+class PhoneBook {
 	private:
-		
+		Contact contact[8];
 	public:
-		void add_contact();
-		void print_contact();
+		PhoneBook();
+		~PhoneBook();
+
+		void addContactInfo();
+		void showContact();
+		void showContactAll();
+		void header();
+		void search();
+		void printContact(int index);
 };
 
 #endif

@@ -2,15 +2,18 @@ NAME = phonebook
 
 SRC = phonebook.cpp contact.cpp main.cpp
 
-OBJ = $(SRC:.cpp=.o)
-
 CC = g++
 
 CFLAGS = -Wall -Wextra -Werror
 
 CPPFLAGS = -std=c++98
 
+OBJ = $(SRC:.cpp=.o)
+
 all: $(NAME)
+
+%o: %cpp 
+	@$(CC) $(CFLAG) -c $< -o $@ 
 
 $(NAME): $(OBJ)
 	@printf "$(GREEN)"

@@ -17,13 +17,13 @@ class Contact {
 		Contact();
 		~Contact();
 
-		void set_firstname( std::string first );
-		void set_lasttname( std::string last );
-		void set_phonenum( std::string phone );
-		void set_darkest( std::string dark );
-
-		std::string get_firstname( void );
-		
+		std::string getFirst();
+		std::string getLast();
+		std::string getNick();
+		std::string getPhone();
+		std::string getDark();
+		void initContact( std::string first, std::string last, std::string nick, std::string phone, std::string dark );
+		void getContact();
 };
 
 #endif
