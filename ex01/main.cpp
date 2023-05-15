@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 21:24:37 by wluedara          #+#    #+#             */
-/*   Updated: 2023/05/15 16:52:24 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/05/15 23:49:23 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,13 @@ int	main() {
 	PhoneBook phonebook;
 
 	std::string input;
-	std::cout  << "\n ----------------------" << std::endl;
-	std::cout << WHT << "|" << YEL << " WELCOME TO PHONEBOOK " << reset << "|" << std::endl;
-	std::cout  << " ----------------------\n" << reset << std::endl;
+	std::cout << GRN << "\nWhat do u want form me?: " << std::endl;
 	while (1)
 	{
-		std::cout << GRN << "\nWhat do u want form me?: " << std::endl;
-		std::cout << RED << "1. ADD:    > to add info to contact" << std::endl;
-		std::cout << RED << "2. SEARCH: > to search for a contact" << std::endl;
-		std::cout << RED << "3. EXIT:   > close the phonebook\n" << reset << std::endl;
-
+		std::cout << CYN << "\n1. ADD:    > to add info to contact" << std::endl;
+		std::cout << CYN << "2. SEARCH: > to search for a contact" << std::endl;
+		std::cout << CYN << "3. EXIT:   > close the phonebook\n" << reset << std::endl;
+		std::cout << CYN << "\nInsert command\n>> ";
 		if (!std::getline(std::cin, input))
 			return (0);
 		if (input == "ADD" || input == "add" || input == "1")
@@ -35,8 +32,13 @@ int	main() {
 			phonebook.search();
 		else if (input == "EXIT" || input == "exit" || input == "3")
 			break;
-		else
-			std::cout << BRED << "\nCommand not found" << reset << std::endl;
+		else {
+			std::cout << BRED << "\n.-. .-. .  . .  . .-. . . .-.   . . .-. .-.   .-. .-. . . . . .-. " << reset << std::endl;
+			std::cout << BRED << "|   | | |\\/| |\\/| |-| |\\| |  )  |\\| | |  |    |-  | | | | |\\| |  )" << reset << std::endl;
+			std::cout << BRED << "`-' `-' '  ` '  ` ` ' ' ` `-'   ' ` `-'  '    '   `-' `-' ' ` `-' " << reset << std::endl;
+			
+			// std::cout << BRED << "\nCommand not found" << reset << std::endl;
+		}
 	}
 	
 }

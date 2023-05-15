@@ -16,6 +16,7 @@ class PhoneBook {
 		void header();
 		void search();
 		void printContact(int index);
+		int  checkDigit( std::string phone );
 };
 
 #endif

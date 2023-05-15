@@ -22,6 +22,7 @@ class Contact {
 		std::string getNick();
 		std::string getPhone();
 		std::string getDark();
+
 		void initContact( std::string first, std::string last, std::string nick, std::string phone, std::string dark );
 		void getContact();
 };
