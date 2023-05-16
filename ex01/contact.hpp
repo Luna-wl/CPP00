@@ -4,7 +4,7 @@
 # include <iostream>
 # include <iomanip>
 # include <string>
-# include "colour.hpp"
+# include "Colour.hpp"
 
 class Contact {
 	private:

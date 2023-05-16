@@ -6,11 +6,11 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:51:04 by wluedara          #+#    #+#             */
-/*   Updated: 2023/05/16 16:07:42 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/05/16 20:04:40 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 void PhoneBook::addContactInfo() {
 	Contact contact;

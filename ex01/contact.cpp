@@ -6,11 +6,11 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 15:20:27 by wluedara          #+#    #+#             */
-/*   Updated: 2023/05/16 15:10:50 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/05/16 19:58:57 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 Contact::Contact() {
 }
@@ -69,4 +69,3 @@ std::string Contact::getPhoneAll() {
 		return (this->phonenumber.substr(0,10) + ".");
 	return (this->phonenumber);
 }
-

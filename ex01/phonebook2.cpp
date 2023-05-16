@@ -6,11 +6,11 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 23:41:48 by wluedara          #+#    #+#             */
-/*   Updated: 2023/05/16 16:37:33 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/05/16 20:10:00 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() {
 	std::cout << RED << "\n  ^~^  ,                   " << std::endl;
@@ -71,4 +71,12 @@ void PhoneBook::search() {
 	this->header();
 	this->showContactAll();
 	this->showContact();
+}
+
+std::string PhoneBook::inputCheck( std::string input ) {
+	for (int i = 0; i < input.length(); i++) {
+		if (input[i] >= 'a' && input[i] <= 'z') 
+			input[i] = toupper(input[i]);
+	}
+	return (input);
 }

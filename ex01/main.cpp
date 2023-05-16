@@ -6,12 +6,12 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 21:24:37 by wluedara          #+#    #+#             */
-/*   Updated: 2023/05/16 16:39:30 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/05/16 20:10:18 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
-#include "phonebook.hpp"
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 int	main() {
 	PhoneBook phonebook;
@@ -26,7 +26,8 @@ int	main() {
 		std::cout << CYN << "\nInsert command\n>> ";
 		if (!std::getline(std::cin, input))
 			return (0);
-		std::transform(input.begin(), input.end(), input.begin(), ::toupper);
+		input = phonebook.inputCheck(input);
+		std::cout << "after: " << input << "\n";
 		if (input == "ADD")
 			phonebook.addContactInfo();
 		else if (input == "SEARCH")
@@ -34,9 +35,10 @@ int	main() {
 		else if (input == "EXIT")
 			break;
 		else {
-			std::cout << BRED << "\n.-. .-. .  . .  . .-. . . .-.   . . .-. .-.   .-. .-. . . . . .-. " << reset << std::endl;
-			std::cout << BRED << "|   | | |\\/| |\\/| |-| |\\| |  )  |\\| | |  |    |-  | | | | |\\| |  )" << reset << std::endl;
-			std::cout << BRED << "`-' `-' '  ` '  ` ` ' ' ` `-'   ' ` `-'  '    '   `-' `-' ' ` `-' " << reset << std::endl;
+			std::cout << BRED << std::endl;
+			std::cout << ".-. .-. .  . .  . .-. . . .-.   . . .-. .-.   .-. .-. . . . . .-. " << std::endl;
+			std::cout << "|   | | |\\/| |\\/| |-| |\\| |  )  |\\| | |  |    |-  | | | | |\\| |  )" << std::endl;
+			std::cout << "`-' `-' '  ` '  ` ` ' ' ` `-'   ' ` `-'  '    '   `-' `-' ' ` `-' " << reset << std::endl;
 		}
 	}
 	

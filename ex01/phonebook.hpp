@@ -1,7 +1,7 @@
 #ifndef PHONE_BOOK_H
 # define PHONE_BOOK_H
 
-# include "contact.hpp"
+# include "Contact.hpp"
 
 class PhoneBook {
 	private:
@@ -15,8 +15,9 @@ class PhoneBook {
 		void showContactAll();
 		void header();
 		void search();
-		void printContact( int index );
 		int  checkDigit( std::string phone );
+		void printContact( int index );
+		std::string inputCheck( std::string input );
 };
 
 #endif
