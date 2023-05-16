@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:51:04 by wluedara          #+#    #+#             */
-/*   Updated: 2023/05/15 23:51:02 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/05/16 16:07:42 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,9 @@ void PhoneBook::showContact() {
 	if (!std::getline(std::cin, i))
 		return;
 	if (!checkDigit(i)) {
-		std::cout << MAG << "\n«⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃»" << std::endl;
-		std::cout << BRED << "    Integer ONLY (つ▀¯▀ )つ" << std::endl;
+		std::cout << std::endl;
+		std::cout << MAG << "«⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃»" << std::endl;
+		std::cout << MAG << "|" << BRED << "   Integer ONLY (つ▀¯▀ )つ   " << MAG << "|" << std::endl;
 		std::cout << MAG << "«⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃»" << std::endl;
 		showContact();
 		return;
@@ -90,17 +91,22 @@ void PhoneBook::showContact() {
 		showContact();
 		return;
 	}
-	std::cout << CYN << "\n======= Info =======" << reset << std::endl;
 	this->printContact(index);
-	std::cout << BMAG << "Darkest Secret\t| " << YEL << contact[index].getDark() << reset << std::endl;
-	std::cout << CYN << "\n====================" << reset << std::endl;
-	
 }
 
 void PhoneBook::showContactAll() {
+	std::cout << RED << "•---------•-------------------------------------------------------------------•" << reset << std::endl;
+	std::cout << RED << "|  " << BGRN << "Index" << RED << "  |    ";
+	std::cout << BGRN << "\tFirstname" << "     |   " << BGRN << "Lastname" << "    |    " << BGRN << "Nickname" << RED << "   " << "|  " << BGRN << "Phonenumber" << RED << "  " << "|" << reset << std::endl;
+	std::cout << RED << ":---------+-------------------------------------------------------------------:" << reset << std::endl;
 	for (int i = 0; i < 8; i++) {
-		std::cout << CYN << "\n======= Info =======" << reset << std::endl;
-		this->printContact(i);
-		std::cout << CYN << "\n====================" << reset << std::endl;
+		std::cout << RED << "|    " << GRN << i << RED << "    |    " << GRN;
+		std::cout << std::setfill(' ') << std::right << std::setw(15) << contact[i].getFirstAll() << RED << "|" << GRN;
+		std::cout << std::setfill(' ') << std::right << std::setw(15) << contact[i].getLastAll() << RED << "|" << GRN;
+		std::cout << std::setfill(' ') << std::right << std::setw(15) << contact[i].getNickAll() << RED << "|" << GRN;
+		std::cout << std::setfill(' ') << std::right << std::setw(15) << contact[i].getPhoneAll() << RED << "|" << std::endl;
+		if (i < 7)
+		std::cout << RED << ":---------+-------------------------------------------------------------------:" << reset << std::endl;
 	}
+	std::cout << RED << "•---------•-------------------------------------------------------------------•" << reset << std::endl;
 }

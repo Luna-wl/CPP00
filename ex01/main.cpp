@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 21:24:37 by wluedara          #+#    #+#             */
-/*   Updated: 2023/05/15 23:49:23 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/05/16 16:39:30 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,17 @@ int	main() {
 		std::cout << CYN << "\nInsert command\n>> ";
 		if (!std::getline(std::cin, input))
 			return (0);
-		if (input == "ADD" || input == "add" || input == "1")
+		std::transform(input.begin(), input.end(), input.begin(), ::toupper);
+		if (input == "ADD")
 			phonebook.addContactInfo();
-		else if (input == "SEARCH" || input == "search" || input == "2")
+		else if (input == "SEARCH")
 			phonebook.search();
-		else if (input == "EXIT" || input == "exit" || input == "3")
+		else if (input == "EXIT")
 			break;
 		else {
 			std::cout << BRED << "\n.-. .-. .  . .  . .-. . . .-.   . . .-. .-.   .-. .-. . . . . .-. " << reset << std::endl;
 			std::cout << BRED << "|   | | |\\/| |\\/| |-| |\\| |  )  |\\| | |  |    |-  | | | | |\\| |  )" << reset << std::endl;
 			std::cout << BRED << "`-' `-' '  ` '  ` ` ' ' ` `-'   ' ` `-'  '    '   `-' `-' ' ` `-' " << reset << std::endl;
-			
-			// std::cout << BRED << "\nCommand not found" << reset << std::endl;
 		}
 	}
 	

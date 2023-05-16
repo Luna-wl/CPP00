@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 23:41:48 by wluedara          #+#    #+#             */
-/*   Updated: 2023/05/15 23:48:47 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/05/16 16:37:33 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,36 @@ int PhoneBook::checkDigit( std::string phone ) {
 }
 
 void PhoneBook::header() {
-	std::cout << YEL << "\n  ___                       ___  " << std::endl;
-	std::cout << YEL << " (o o)                     (o o) " << std::endl;
-	std::cout << YEL << "(  V  ) "<< BCYN << "Phonebook Contact"<< YEL << " (  V  )" << std::endl;
-	std::cout << YEL << "--m-m-----------------------m-m--" << reset << std::endl;
+	std::cout << YEL << "\n\t\t         ___                       ___  " << std::endl;
+	std::cout << YEL << "\t\t        (o o)                     (o o) " << std::endl;
+	std::cout << YEL << "\t\t       (  V  ) "<< BCYN << "Phonebook Contact"<< YEL << " (  V  )" << std::endl;
+	std::cout << YEL << "\t\t       --m-m-----------------------m-m--" << reset << std::endl;
 }
 
-void PhoneBook::printContact(int index) {
-	std::cout << BMAG << "\nIndex\t\t| " << YEL << index << reset << std::endl;
-	std::cout << BMAG << "Firstname\t| " << YEL << contact[index].getFirst() << reset << std::endl;
-	std::cout << BMAG << "Lastname\t| " << YEL << contact[index].getLast() << reset << std::endl;
-	std::cout << BMAG << "Nickname\t| " << YEL << contact[index].getNick() << reset << std::endl;
-	std::cout << BMAG << "Phonenumber\t| " << YEL << contact[index].getPhone() << reset << std::endl;
+void PhoneBook::printContact( int index ) {
+	std::cout << MAG << "\n•-----------------•---------------------•" << reset << std::endl;
+	std::cout << MAG << "|  " << BYEL << "Index" << MAG << "          |                    " << YEL << index << MAG << "|" << reset << std::endl;
+	std::cout << MAG << ":-----------------+---------------------:" << reset << std::endl;
+
+	std::cout << MAG << "|  "  << BYEL << "Firstname"  << MAG << "      |" << YEL;
+	std::cout << std::setfill(' ') << std::right << std::setw(21) << contact[index].getFirst() << MAG << "|" << std::endl;
+	std::cout << MAG << ":-----------------+---------------------:" << std::endl;
+
+	std::cout << MAG << "|  " << BYEL << "Lastname" << MAG << "       |" << YEL;
+	std::cout << std::setfill(' ') << std::right << std::setw(21) << contact[index].getLast() << MAG "|" << std::endl;
+	std::cout << MAG << ":-----------------+---------------------:" << reset << std::endl;
+	
+	std::cout << MAG << "|  " <<  BYEL << "Nickname" << MAG << "       |" << YEL;
+	std::cout << std::setfill(' ') << std::right << std::setw(21) << contact[index].getNick() << MAG "|" << std::endl;
+	std::cout << MAG << ":-----------------+---------------------:" << reset << std::endl;
+
+	std::cout << MAG << "|  " <<  BYEL << "Phonenumber" << MAG << "    |" << YEL;
+	std::cout << std::setfill(' ') << std::right << std::setw(21) << contact[index].getPhone() << MAG "|" << std::endl;
+	std::cout << MAG << ":-----------------+---------------------:" << reset << std::endl;
+
+	std::cout << MAG << "|  " <<  BYEL << "Darkest Sercet" << MAG << " |" << YEL;
+	std::cout << std::setfill(' ') << std::right << std::setw(21) << contact[index].getDark() << MAG "|" << std::endl;
+	std::cout << MAG << "•-----------------•---------------------•" << reset << std::endl;
 }
 
 void PhoneBook::search() {
